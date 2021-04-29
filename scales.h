@@ -6,16 +6,14 @@
 
 #pragma once
 
-#include "intervals.h"
+//#include "intervals.h"
 #include <vector>
 #include <string>
+#include "helpers.hpp"
 
-// silent note
-const int x = 127;
+using scaleT = std::vector<intervalT>;
 
-typedef std::vector<intervalT> scaleT;
-
-namespace scale {
+namespace Scale {
   //scales by intervals
   const scaleT chromatic{t,min2,maj2,min3,maj3,p4,a4,p5,min6,maj6,min7,maj7};
   const scaleT major({t,maj2,maj3,p4,p5,maj6,maj7});
@@ -36,8 +34,6 @@ namespace scale {
   const scaleT locrian({t,min2,min3,p4,d5,min6,min7});
 }
 
-scaleT sTranspOct(scaleT s,int oct);
-scaleT sclKey(keyT k,scaleT s);
-scaleT sclKey(std::string k,scaleT c);
-//scaleT relminor(scaleT s);
-//scaleT relmajor(scaleT s);
+scaleT scale(keyT k,scaleT s);
+scaleT scale(std::string k,scaleT s);
+//scaleT _transpose(scaleT s,uint8_t o);

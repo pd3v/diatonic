@@ -4,11 +4,12 @@
 //  Created by @pd3v_
 //
 
-#pragma once
+//#pragma once
 
-#include "intervals.h"
+//#include "intervals.h"
 #include <vector>
 #include <string>
+#include "helpers.hpp"
 
 using chordT = std::vector<intervalT>;
 using i = intervalT;
@@ -23,11 +24,10 @@ const chordT sus4({i::t,i::p4,i::p5});
 const chordT halfdim({i::t,i::min3,i::a4,i::min7});
 const chordT dim({i::t,i::min3,i::a4,i::maj6});
 
-//std::pair<std::string,uint8_t> strToKeyAndOct(std::string keyAndOct);
-
 chordT chord(keyT k,chordT c);
 chordT chord(std::string k,chordT c);
+chordT chordBase(keyT k,chordT c);
 chordT invert(chordT c,uint8_t p);
-midiT transpose(chordT c,uint8_t o);
+//midiT transpose(chordT c,uint8_t o);
 
 

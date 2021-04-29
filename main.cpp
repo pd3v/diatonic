@@ -4,31 +4,37 @@
 //  Created by @pd3v_
 //
 
-#include "mnotation.h"
-#include <iostream>
-#include <vector>
 
-using namespace std;
+//#include <iostream>
+//#include <vector>
+//#include "helpers.hpp"
+//#include "scales.h"
+#include "chords.h"
 
-template<typename T>
-void print(std::vector<T> v) {
-  for (auto& _v : v)
-    cout << _v << " ";
-  
-  cout << endl;
-}
+//template<typename T>
+//void print(std::vector<T> v, typename std::enable_if<std::is_scalar<T>::value,void*>::type() = nullptr) {
+//  for (auto& _v : v)
+//    std::cout << _v << " ";
+//  
+//  std::cout << std::endl;
+//}
 
 int main(int argc, const char * argv[]) {
  
- chordT myChord = {t,min2,maj2};
- chordT CM7 = {t,maj3,p5,maj7};
+// chordT myChord = {t,min2,maj2};
+// chordT CM7 = {t,maj3,p5,maj7};
+
   
 // cout << myChord.at(1) << " " << myChord.at(2);
   
 //  print(transpose(chord(C,myChord),4));
 //  print(transpose(chord(C,CM7),0));
-  print(transpose(chord("c5",myChord),1));
+//  print(transpose<chordT>(chord("c5",myChord),1));
   
+//  print(scale(C,Scale::pentatonicminor));
+//  print(scale("cs1",Scale::pentatonicminor));
+//  print(chord(F,M7));
+//  
 //  cout << transpose(myChord, 6).at(1);
 //  cout << invert(transpose(myChord, 4),0).at(0);
 
