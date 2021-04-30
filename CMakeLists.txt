@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.19.2)
 
-set (CMAKE_CXX_STANDARD 17)
+# Default as c++17 but also possible as c++11 or c++14
+set (CMAKE_CXX_STANDARD 14)
 
 project(diatonic_demo VERSION 0.1)
 
