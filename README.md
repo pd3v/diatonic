@@ -19,7 +19,7 @@ A library with diatonic transforms for music making.
 
 **In *diatonic*'s root directory**
 
-	cmake -S . -B build/
+	mkdir build && cmake -S . -B build/
 
 **and then**
 
