@@ -1,5 +1,5 @@
 //
-//  mnotation - music scales, chords and transforming functions
+// 	diatonic lib - music scales, chords and transforming functions
 //
 //  Created by @pd3v_
 //
