@@ -6,17 +6,19 @@
 
 #pragma once
 
-//#include "intervals.h"
 #include <vector>
 #include <string>
-#include "helpers.hpp"
+#include "intervals.h"
+
+extern const uint8_t OCTAVE;
 
 using scaleT = std::vector<intervalT>;
+using i = intervalT;
 
-namespace Scale {
+namespace scale_ {
   //scales by intervals
   const scaleT chromatic{t,min2,maj2,min3,maj3,p4,a4,p5,min6,maj6,min7,maj7};
-  const scaleT major({t,maj2,maj3,p4,p5,maj6,maj7});
+  const scaleT major({i::t,i::maj2,i::maj3,i::p4,i::p5,i::maj6,i::maj7});
   const scaleT minor({t,maj2,min3,p4,p5,min6,min7});
   const scaleT harmonicminor({t,maj2,min3,p4,p5,maj6,maj7});
   const scaleT whole({t,maj2,maj3,p4,p5,maj6,maj7});
@@ -32,8 +34,9 @@ namespace Scale {
   const scaleT mixolydian({t,maj2,maj3,p4,p5,maj6,min7});
   const scaleT aeolian = minor;
   const scaleT locrian({t,min2,min3,p4,d5,min6,min7});
-}
 
 scaleT scale(keyT k,scaleT s);
 scaleT scale(std::string k,scaleT s);
-//scaleT _transpose(scaleT s,uint8_t o);
+midiT transpose(scaleT s,uint8_t o);
+
+}

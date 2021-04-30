@@ -6,14 +6,16 @@
 
 //#pragma once
 
-//#include "intervals.h"
 #include <vector>
 #include <string>
-#include "helpers.hpp"
+#include "intervals.h"
+
+extern const uint8_t OCTAVE;
 
 using chordT = std::vector<intervalT>;
 using i = intervalT;
 
+namespace chord_ {
 const chordT M({i::t,i::maj3,i::p5});
 const chordT M7({i::t,i::maj3,i::p5,i::maj7});
 const chordT dom({i::t,i::maj3,i::p5,i::min7});
@@ -28,6 +30,5 @@ chordT chord(keyT k,chordT c);
 chordT chord(std::string k,chordT c);
 chordT chordBase(keyT k,chordT c);
 chordT invert(chordT c,uint8_t p);
-//midiT transpose(chordT c,uint8_t o);
-
-
+midiT transpose(chordT c,uint8_t o);
+}
