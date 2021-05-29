@@ -10,14 +10,16 @@
 #include <map>
 #include <regex>
 
-const uint8_t OCTAVE = 12;
+// const uint8_t OCTAVE = 12;
 const std::basic_regex<char> NOTE_OCT_REGEX = std::regex("[a-g][b|s]?[0-9]");
 const std::basic_regex<char> NOTE_REGEX = std::regex("[a-g][b|s]?");
 const std::basic_regex<char> OCT_REGEX = std::regex("[0-9]");
 
-enum intervalT {t = 0,min2,maj2,min3,maj3,p4,a4,p5,min6,maj6,min7,maj7,O,min9,maj9,min10,maj10,min11,maj11,p12,a12,min13,maj13};
+enum intervalT {t = 0,min2,maj2,min3,maj3,p4,a4,p5,min6,maj6,min7,maj7,oct,min9,maj9,min10,maj10,min11,maj11,p12,a12,min13,maj13};
 enum keyT {C = 0,Cs,D,Ds,E,F,Fs,G,Gs,A,As,B};
 enum noteT {c = 0,cs,d,ds,e,f,fs,g,gs,a,as,b};
+
+const intervalT OCTAVE = intervalT::oct;
 
 using midiT = std::vector<intervalT>;
 

@@ -5,50 +5,32 @@
 //
 
 #include <iostream>
-#include "scales.h"
-//#include "chords.h"
-#include "tonal.h"
+#include "tones.hpp"
 
 using namespace scale_;
 using namespace chord_;
 using namespace tone_;
 
 int main(int argc, const char * argv[]) {
-  
+
   // create scales
-//  auto DSharpMajor = scale(Ds,scale_::major);
-  auto DSharpPentaMajorOctave4 = scale("Cs5",scale_::pentatonicmajor);
+  auto DSharpMajor = scale(Ds,scale_::major);
+  auto DSharpPentaMajorOctave4 = scale("ds4",scale_::pentatonicmajor);
   
   // create chords
-//  auto Bminor7 = chord(B,m7);
+  auto Bminor7 = chord(B,m7);
   
-  // 2nd inversion
-//  auto Bminor7_2nd = invert(Bminor7,2);
+  // 2nd chord inversion
+  auto Bminor7_2nd = invert(Bminor7,2);
+
+  // create all tonality chords (4 notes each chord)
+  toneT CMajorChords = tone(C,tone_::major);
   
-  // C major chords
-//  toneT CMajorChords = tone(Cs,tone_::major);
-//
-//  for (auto& c : CMajorChords) {
-//    for (auto n : c)
-//      std::cout << n << " ";
-//    
-//    std::cout << std::endl;
-//  }
-  
-  
-//  auto ah = chord_::transpose(tone_::major.at(t),0);
-  toneT t = tone_::tone(C,tone_::major);
-//
-  for (auto& c : t) {
-    for (auto& n : c)
-      std::cout << n << " ";
-    std::cout << std::endl;
-  }
-  
-  //{intervalT::t,min2,maj2,min2,maj3,p4,d5,p5,maj6,min7};
-  //intervalT ah[10] = scale_::major;
-  
-//  std::cout << tone_::tone(ah)[0];
-  std::cout << tone_::myTone[0];
+  // transpose tonality chords to the 3rd octave
+  toneT CMajorChords3 = transpose(CMajorChords,3);
+
+  // get a tonality's Dominant chord
+  chordT GMajor7minorChord = CMajorChords3.at(dominant);
+
   return 0;
 }

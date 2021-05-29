@@ -18,6 +18,8 @@ extern const intervalT OCTAVE;
 
 using toneT = std::vector<chordT>;
 
+enum chordDegreeT {tonic = 0,supertonic,mediant,subdominant,dominant,submediant,leadingtone,subtonic};
+
 namespace tone_ {
   
   template <typename T,size_t chordSize,size_t scaleSize>
