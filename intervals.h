@@ -10,7 +10,6 @@
 #include <map>
 #include <regex>
 
-// const uint8_t OCTAVE = 12;
 const std::basic_regex<char> NOTE_OCT_REGEX = std::regex("[a-g][b|s]?[0-9]");
 const std::basic_regex<char> NOTE_REGEX = std::regex("[a-g][b|s]?");
 const std::basic_regex<char> OCT_REGEX = std::regex("[0-9]");

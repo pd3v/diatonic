@@ -12,13 +12,13 @@
 #include "intervals.h"
 #include "scales.h"
 #include "chords.h"
-#include "ConstexprArray.hpp"
+#include "constexprArray.hpp"
 
 extern const intervalT OCTAVE;
 
 using toneT = std::vector<chordT>;
 
-enum chordDegreeT {tonic = 0,supertonic,mediant,subdominant,dominant,submediant,leadingtone,subtonic};
+enum chordDegreeT {tonic = 0,supertonic,mediant,subdominant,dominant,submediant,subtonic};
 
 namespace tone_ {
   
@@ -78,6 +78,8 @@ namespace tone_ {
 
     return t;
   }
+
+  // TODO: Add tone function with key as a key/octave string. Similiar the already existent function for chord and scale 
 
   auto chromatic = toneChords<intervalT,4,12>(scale_::chromatic);
   auto major = toneChords<intervalT,4,7>(scale_::major);
