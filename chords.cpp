@@ -53,8 +53,8 @@ midiT chord_::transpose(chordT c,uint8_t o) {
   return c;
 }
 
-std::vector<uint8_t> chord_::chordAsInt(chordT c) {
-  static std::vector<uint8_t> cAsInt;
+std::vector<int> chord_::chordAsInt(chordT c) {
+  static std::vector<int> cAsInt;
   
   cAsInt.clear();
   for_each(c.begin(),c.end(),[&](intervalT n){cAsInt.push_back(static_cast<int>(n));});  

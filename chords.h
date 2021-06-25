@@ -32,5 +32,5 @@ namespace chord_ {
   chordT invert(chordT c,uint8_t p);
   midiT transpose(chordT c,intervalT i);
   midiT transpose(chordT c,uint8_t o);
-  std::vector<uint8_t> chordAsInt(chordT c);
+  std::vector<int> chordAsInt(chordT c);
 }
