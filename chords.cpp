@@ -38,15 +38,23 @@ chordT chord_::invert(chordT c,uint8_t p) {
   return c;
 }
 
-midiT chord_::transpose(chordT c,uint8_t o) {
-  chordT _c = chordOct0(c);
-  transform(_c.begin(),_c.end(),_c.begin(),[&](intervalT i){return static_cast<intervalT>(OCTAVE*o+i);});
+// transpose chord by interval
+midiT chord_::transpose(chordT c,intervalT i) {
+  transform(c.begin(),c.end(),c.begin(),[&](intervalT _i){return static_cast<intervalT>(_i+i);});
   
-  return _c;
+  return c;
 }
 
-std::vector<int> chord_::chordAsInt(chordT c) {
-  static std::vector<int> cAsInt;
+// transpose chord by octave
+midiT chord_::transpose(chordT c,uint8_t o) {
+  chordT _c = chordOct0(c);
+  transform(c.begin(),c.end(),c.begin(),[&](intervalT i){return static_cast<intervalT>(OCTAVE*o+i);});
+  
+  return c;
+}
+
+std::vector<uint8_t> chord_::chordAsInt(chordT c) {
+  static std::vector<uint8_t> cAsInt;
   
   cAsInt.clear();
   for_each(c.begin(),c.end(),[&](intervalT n){cAsInt.push_back(static_cast<int>(n));});  

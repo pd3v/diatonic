@@ -10,6 +10,11 @@ A library with diatonic transforms for music making.
   
   // create chords
   auto Bminor7 = chord(B,m7);
+
+  // create custom chords 
+  auto myChord = {intervalT::t,intervalT::min2,intevalT::d5}; 
+  // or shorter version
+  auto myChord2 = {i::t,i::min2,i::d5}; 
   
   // 2nd chord inversion
   auto Bminor7_2nd = invert(Bminor7,2);

@@ -9,7 +9,7 @@
 
 std::pair<std::string,uint8_t> strToKeyAndOct(std::string keyAndOct) {
   std::smatch keyMatch,octMatch;
-  std::string key,oct;// = "0";
+  std::string key,oct;
 
   // key user input to lowercase
   transform(keyAndOct.begin(),keyAndOct.end(),keyAndOct.begin(),::tolower);

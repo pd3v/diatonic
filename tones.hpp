@@ -48,7 +48,7 @@ namespace tone_ {
   
   template <typename T=intervalT,size_t chordSize=4,size_t scaleSize=7>
   toneT tone(keyT k,ConstexprArray<ConstexprArray<T,chordSize>,scaleSize> t) {
-    static toneT _t; // it works, but static?! hummm...
+    static toneT _t;
     chordT _c;
     uint8_t currNote, prevNote;; 
 
