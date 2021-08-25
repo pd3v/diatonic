@@ -6,6 +6,7 @@
 
 #include "chords.h"
 #include <algorithm>
+#include <math.h>
 
 chordT chord_::chord(keyT k,chordT c) {
   transform(c.begin(),c.end(),c.begin(),[&](intervalT i){return static_cast<intervalT>(i+k);});
@@ -25,6 +26,18 @@ chordT chord_::chordOct0(chordT c) {
   std::sort(c.begin(),c.end(),[&](uint8_t n1,uint8_t n2){return n1 < n2;});
   
   return c;
+}
+
+int chord_::octave(chordT c) {
+  static int chordOctave;
+  
+  // I assume chord tonic note as the lower pitch note
+  std::sort(c.begin(),c.end(),[&](uint8_t n1,uint8_t n2){return n1 < n2;});
+  
+  // and considering chord octave determined by its tonic note
+  chordOctave = c.at(0)/OCTAVE;
+  
+  return chordOctave;
 }
 
 chordT chord_::invert(chordT c,uint8_t p) {

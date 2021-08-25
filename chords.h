@@ -29,6 +29,7 @@ namespace chord_ {
   chordT chord(keyT k,chordT c);
   chordT chord(std::string k,chordT c);
   chordT chordOct0(chordT c);
+  int octave(chordT c);
   chordT invert(chordT c,uint8_t p);
   midiT transpose(chordT c,intervalT i);
   midiT transpose(chordT c,uint8_t o);
