@@ -20,6 +20,15 @@ scaleT scale_::scale(std::string k,scaleT s) {
   return scale_::transpose(_scale,keyAndOct.second);
 }
 
+int scale_::octave(scaleT s) {
+  static int scaleOctave;
+  
+  scaleOctave = s.at(0)/OCTAVE;
+  
+  return scaleOctave;
+}
+
+
 midiT scale_::transpose(scaleT s,uint8_t o) {
   transform(s.begin(),s.end(),s.begin(),[&](intervalT i){return static_cast<intervalT>(OCTAVE*o+i);});
   

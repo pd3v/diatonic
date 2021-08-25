@@ -37,5 +37,6 @@ namespace scale_ {
 
   scaleT scale(keyT k,scaleT s);
   scaleT scale(std::string k,scaleT s);
+  int octave(scaleT s);
   midiT transpose(scaleT s,uint8_t o);
 }
