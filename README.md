@@ -27,6 +27,10 @@ A library with diatonic transforms for music making.
 
   // get a tonality's Dominant chord
   chordT GMajor7minorChord = CMajorChords3.at(dominant);
+
+  // Write a melodic phrase where "x" (midi 127) is consired silence
+  phraseT aMelody = phrasing({"c1","c2","x","c3"});
+
 ```
 
 ## Build
