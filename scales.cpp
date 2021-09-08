@@ -28,7 +28,6 @@ int scale_::octave(scaleT s) {
   return scaleOctave;
 }
 
-
 midiT scale_::transpose(scaleT s,uint8_t o) {
   transform(s.begin(),s.end(),s.begin(),[&](intervalT i){return static_cast<intervalT>(OCTAVE*o+i);});
   

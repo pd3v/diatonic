@@ -23,6 +23,6 @@ std::pair<std::string,uint8_t> strToKeyAndOct(std::string keyAndOct) {
     
     return std::make_pair(key,std::stoi(oct));
   }
-  
+
   throw std::runtime_error("Key and octave do not follow <keyoct> nomenclature.");
 }

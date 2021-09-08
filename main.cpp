@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include "tones.hpp"
+#include "phrases.hpp"
 
 using namespace scale_;
 using namespace chord_;
@@ -32,5 +33,8 @@ int main(int argc, const char * argv[]) {
   // get a tonality's Dominant chord
   chordT GMajor7minorChord = CMajorChords3.at(dominant);
 
+  // Write a melodic phrase where "x" (midi 127) is consired silence
+  phraseT aMelody = phrasing({"c1","c2","x","c3"});
+  
   return 0;
 }
