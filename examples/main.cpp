@@ -35,12 +35,5 @@ int main(int argc, const char * argv[]) {
   // Write a melodic phrase where "x" (midi 127) is consired silence
   phraseT aMelody = phrasing({"c1","c2","x","c3"});
 
-  std::cout << "Hey" << std::endl;
-  auto Cmajor7 = chord(C,M7);
-
-  for(auto& n : Cmajor7)
-    std::cout << n << ":";
-  std::cout << std::endl;
-
   return 0;
 }
