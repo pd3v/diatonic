@@ -1,6 +1,2 @@
-// #include "intervals.h"
-// #include "constexprArray.hpp"
-// #include "scales.h"
-// #include "chords.h"
 #include "tones.hpp"
 #include "phrases.hpp"

@@ -3,22 +3,24 @@ cmake_minimum_required(VERSION 3.19.2)
 # Default as c++17 but also possible c++14
 set (CMAKE_CXX_STANDARD 17)
 
-project(diatonic_demo VERSION 0.2)
+project(diatonic)
 
-set(LIBRARY_OUTPUT_NAME diatonic)
+set(LIBRARY_OUTPUT_NAME ${PROJECT_NAME})
 
 add_library(
   ${LIBRARY_OUTPUT_NAME}
-  chords.h
-  chords.cpp
-  scales.h
-  scales.cpp
-  intervals.h
-  intervals.cpp
-	tones.hpp
-  constexprArray.hpp
+  src/intervals.h
+  src/intervals.cpp
+  src/constexprArray.hpp
+  src/scales.h
+  src/scales.cpp
+  src/chords.h
+  src/chords.cpp
+  src/tones.hpp
+  src/phrases.hpp
 )
 
-add_executable(${PROJECT_NAME} main.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBRARY_OUTPUT_NAME})
+target_include_directories(${PROJECT_NAME} PUBLIC include/)
 
+add_executable("${PROJECT_NAME}_demo" examples/main.cpp)
+target_link_libraries("${PROJECT_NAME}_demo" PUBLIC ${PROJECT_NAME})
