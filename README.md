@@ -37,8 +37,7 @@ A library with diatonic transforms for music making.
 
 **In *diatonic*'s root directory**
 
-	mkdir build && cmake -S . -B build/
-
-**and then**
-
-	cd build/ && make
+	mkdir build
+	cd build
+  cmake .
+  make
