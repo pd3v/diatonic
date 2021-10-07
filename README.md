@@ -39,5 +39,5 @@ A library with diatonic transforms for music making.
 
 	mkdir build
 	cd build
-  cmake .
-  make
+  	cmake .
+  	make
