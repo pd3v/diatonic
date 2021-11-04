@@ -13,9 +13,10 @@
 extern const intervalT OCTAVE;
 
 using chordT = std::vector<intervalT>;
-using i = intervalT;
 
 namespace chord_ {
+  using i = intervalT;
+
   const chordT M({i::t,i::maj3,i::p5});
   const chordT M7({i::t,i::maj3,i::p5,i::maj7});
   const chordT dom({i::t,i::maj3,i::p5,i::min7});

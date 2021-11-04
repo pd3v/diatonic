@@ -23,4 +23,4 @@ add_library(
 target_include_directories(${PROJECT_NAME} PUBLIC include/)
 
 add_executable("${PROJECT_NAME}_demo" examples/main.cpp)
-target_link_libraries("${PROJECT_NAME}_demo" PUBLIC ${PROJECT_NAME})
+target_link_libraries("${PROJECT_NAME}_demo" PUBLIC ${LIBRARY_OUTPUT_NAME})
