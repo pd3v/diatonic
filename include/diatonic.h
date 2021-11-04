@@ -1,2 +1,2 @@
-#include "tones.hpp"
-#include "phrases.hpp"
+#include "../src/tones.hpp"
+#include "../src/phrases.hpp"
