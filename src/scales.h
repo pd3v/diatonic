@@ -12,10 +12,9 @@
 extern const intervalT OCTAVE;
 
 using scaleT = std::vector<intervalT>;
+using il = intervalT;
 
 namespace scale_ {
-  using i = intervalT;
-
   //scales by intervals
   const scaleT chromatic{t,min2,maj2,min3,maj3,p4,a4,p5,min6,maj6,min7,maj7};
   const scaleT major({t,maj2,maj3,p4,p5,maj6,maj7});
