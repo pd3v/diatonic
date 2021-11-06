@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19.2)
 
-# Default as c++14 but also possible c++17
-set (CMAKE_CXX_STANDARD 14)
+# Default as c++17 but also possible c++14
+set (CMAKE_CXX_STANDARD 17)
 
 project(diatonic)
 
