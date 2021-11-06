@@ -1,3 +1,6 @@
-// #include "../src/intervals.h"
-// #include "../src/tones.hpp"
+#include "../src/intervals.h"
+#include "../src/constexprArray.hpp"
+#include "../src/chords.h"
+#include "../src/scales.h"
+#include "../src/tones.hpp"
 #include "../src/phrases.hpp"

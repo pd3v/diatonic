@@ -5,7 +5,7 @@
 //
 
 #include <iostream>
-#include "diatonic.h"
+#include "../include/diatonic.h"
 
 using namespace scale_;
 using namespace chord_;
