@@ -1,5 +1,6 @@
 # diatonic
-A library with diatonic transforms for music making.
+
+You don't need to create lists of vectors/arrays to set pre-definitions for "all" scales and chords, create them dynamically; do it by calling functions:
 
 ## Some examples
 
