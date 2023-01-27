@@ -1,6 +1,6 @@
 # diatonic
 
-You don't need to create lists of vectors/arrays to set pre-definitions for "all" scales and chords, create them dynamically; do it by calling functions:
+You don't need to create lists of vectors/arrays to set pre-definitions for "all" scales, chords and a given tonality chords'; create them dynamically; do it by calling functions.
 
 ## Some examples
 
