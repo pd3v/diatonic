@@ -8,7 +8,6 @@ project(diatonic)
 set(LIBRARY_OUTPUT_NAME ${PROJECT_NAME})
 
 add_library(
-	# ${LIBRARY_OUTPUT_NAME} STATIC
 	${LIBRARY_OUTPUT_NAME} SHARED
   src/intervals.h
   src/intervals.cpp
