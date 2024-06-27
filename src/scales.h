@@ -24,7 +24,7 @@ namespace scale_ {
   const scaleT whole({t,maj2,maj3,a4,min6,min7});
   const scaleT pentatonicmajor({t,maj2,maj3,p5,maj6});
   const scaleT pentatonicminor({t,min3,p4,p5,min7});
-  const scaleT blues({t,maj3,p4,a4,p5,maj6});
+  const scaleT blues({t,min3,p4,a4,p5,min7});
   
   // Major scale modes
   const scaleT ionian = major;
