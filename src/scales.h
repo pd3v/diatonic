@@ -12,6 +12,7 @@
 extern const intervalT OCTAVE;
 
 using scaleT = std::vector<intervalT>;
+using scaleGlyphT = std::vector<std::string>;
 using il = intervalT;
 
 namespace scale_ {
@@ -20,7 +21,7 @@ namespace scale_ {
   const scaleT major({t,maj2,maj3,p4,p5,maj6,maj7});
   const scaleT minor({t,maj2,min3,p4,p5,min6,min7});
   const scaleT harmonicminor({t,maj2,min3,p4,p5,maj6,maj7});
-  const scaleT whole({t,maj2,maj3,p4,p5,maj6,maj7});
+  const scaleT whole({t,maj2,maj3,a4,min6,min7});
   const scaleT pentatonicmajor({t,maj2,maj3,p5,maj6});
   const scaleT pentatonicminor({t,min3,p4,p5,min7});
   const scaleT blues({t,maj3,p4,a4,p5,maj6});
@@ -38,4 +39,6 @@ namespace scale_ {
   scaleT scale(std::string k,scaleT s);
   int octave(scaleT s);
   midiT transpose(scaleT s,uint8_t o);
+
+  scaleGlyphT scaleNotes(scaleT s);
 }

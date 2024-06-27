@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -O3 -DNDEBUG -dynamiclib -Wl,-headerpad_max_install_names -o libdiatonic.dylib -install_name @rpath/libdiatonic.dylib CMakeFiles/diatonic.dir/src/intervals.cpp.o CMakeFiles/diatonic.dir/src/scales.cpp.o CMakeFiles/diatonic.dir/src/chords.cpp.o 

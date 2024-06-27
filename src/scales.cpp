@@ -33,3 +33,15 @@ midiT scale_::transpose(scaleT s,uint8_t o) {
   
   return s;
 }
+
+scaleGlyphT scale_::scaleNotes(scaleT s) {
+  std::vector<std::string> vScaleNotes;
+  auto in = idxNote;
+
+  for (auto& intrv : s) {
+    auto iterator = std::find_if(in.begin(), in.end(), [&](auto& _in){return _in.first == (intrv % 12);});
+    vScaleNotes.emplace_back((*iterator).second);
+  }
+  
+  return vScaleNotes;
+}
