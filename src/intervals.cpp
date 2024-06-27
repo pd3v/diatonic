@@ -30,5 +30,3 @@ std::pair<std::string,uint8_t> strToKeyAndOct(std::string keyAndOct) {
   } else
       return std::make_pair("c",0); 
 }
-
-// constexpr std::map<std::string,uint16_t> idxNote(const std::map<std::string,uint16_t>& ah) {return ah;};
