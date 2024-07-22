@@ -4,8 +4,6 @@
 //  Created by @pd3v_
 //
 
-// #pragma once
-
 #include <vector>
 #include <string>
 #include <functional>
@@ -17,8 +15,12 @@
 extern const intervalT OCTAVE;
 
 using toneT = std::vector<chordT>;
+using chordGlyphT = scaleGlyphT;
+using toneGlyphT = std::vector<chordGlyphT>;
 
 enum chordDegreeT {tonic = 0,supertonic,mediant,subdominant,dominant,submediant,subtonic};
+std::vector<std::string> idxChordDegree{"tonic","supertonic","mediant","subdominant","dominant","submediant","subtonic"};
+std::vector<std::string> idxChordPos{"T","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"};
 
 namespace tone_ {
   
@@ -47,16 +49,16 @@ namespace tone_ {
   }
   
   template <typename T=intervalT,size_t chordSize=4,size_t scaleSize=7>
-  toneT tone(keyT k,ConstexprArray<ConstexprArray<T,chordSize>,scaleSize> t) {
-    static toneT _t;
+  toneT tone(const keyT& k,ConstexprArray<ConstexprArray<T,chordSize>,scaleSize>& t) {
+    toneT _t;
     chordT _c;
-    uint8_t currNote, prevNote;; 
+    uint8_t currNote, prevNote;
 
     for (int i = 0; i < scaleSize; ++i) {
       for (int j = 0; j < chordSize; ++j) {
         currNote = static_cast<intervalT>(t[i][j]);
         if (currNote < prevNote) currNote += OCTAVE;
-        _c.emplace_back(static_cast<intervalT>(currNote));
+        _c.emplace_back(static_cast<intervalT>(currNote+k));
         prevNote = currNote;
       }
       _t.push_back(_c);
@@ -79,7 +81,31 @@ namespace tone_ {
     return t;
   }
 
-  // TODO: Add tone function with key as a key/octave string. Similiar the already existent function for chord and scale 
+  template <typename T=intervalT,size_t chordSize=4,size_t scaleSize=7>
+  toneT tone(const std::string& k,ConstexprArray<ConstexprArray<T,chordSize>,scaleSize>& t) {
+    std::pair<std::string,uint8_t> keyAndOct = strToKeyAndOct(k);
+    toneT _t = tone(static_cast<keyT>(noteIdx.at(keyAndOct.first)),t);
+    _t = transpose(_t,keyAndOct.second);
+
+    return _t;
+  }
+  
+  toneGlyphT toGlyphs(toneT t) {
+    toneGlyphT vToneChords;
+    chordGlyphT vChordGlyph;
+    auto in = idxNote;
+
+    for (auto& chord : t) {
+      for (auto& intrv : chord) {
+        auto iterator = std::find_if(in.begin(), in.end(), [&](auto& _in){return _in.first == (intrv % 12);});
+        vChordGlyph.emplace_back((*iterator).second);
+      }
+      vToneChords.emplace_back(vChordGlyph);
+      vChordGlyph.clear();
+    }
+    
+    return vToneChords;
+  }
 
   auto chromatic = toneChords<intervalT,4,12>(scale_::chromatic);
   auto major = toneChords<intervalT,4,7>(scale_::major);
@@ -89,4 +115,12 @@ namespace tone_ {
   auto pentatonicmajor = toneChords<intervalT,4,5>(scale_::pentatonicmajor);
   auto pentatonicminor = toneChords<intervalT,4,5>(scale_::pentatonicminor);
   auto blues = toneChords<intervalT,4,6>(scale_::blues);
+
+  auto ionian = major;
+  auto dorian = toneChords<intervalT,4,7>(scale_::dorian);
+  auto phrygian = toneChords<intervalT,4,7>(scale_::phrygian);
+  auto lydian = toneChords<intervalT,4,7>(scale_::lydian);
+  auto mixolydian = toneChords<intervalT,4,7>(scale_::mixolydian);
+  auto aeolian = minor;
+  auto locrian = toneChords<intervalT,4,7>(scale_::locrian);
 }
