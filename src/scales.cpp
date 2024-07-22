@@ -34,8 +34,8 @@ midiT scale_::transpose(scaleT s,uint8_t o) {
   return s;
 }
 
-scaleGlyphT scale_::scaleNotes(scaleT s) {
-  std::vector<std::string> vScaleNotes;
+scaleGlyphT scale_::toGlyphs(scaleT s) {
+  scaleGlyphT vScaleNotes;
   auto in = idxNote;
 
   for (auto& intrv : s) {

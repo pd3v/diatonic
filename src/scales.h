@@ -40,5 +40,5 @@ namespace scale_ {
   int octave(scaleT s);
   midiT transpose(scaleT s,uint8_t o);
 
-  scaleGlyphT scaleNotes(scaleT s);
+  scaleGlyphT toGlyphs(scaleT s);
 }
