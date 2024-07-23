@@ -24,7 +24,7 @@ std::vector<std::string> idxChordPos{"T","II","III","IV","V","VI","VII","VIII","
 
 namespace tone_ {
   
-  template <typename T,size_t chordSize,size_t scaleSize>
+  template <typename T=intervalT,size_t chordSize=4,size_t scaleSize=7>
   constexpr auto toneChords(std::vector<T> s) -> ConstexprArray<ConstexprArray<T,chordSize>,scaleSize> {
     ConstexprArray<T,scaleSize> _s(s);
     ConstexprArray<ConstexprArray<T,chordSize>,scaleSize>_toneChords{};
@@ -89,7 +89,7 @@ namespace tone_ {
 
     return _t;
   }
-  
+
   toneGlyphT toGlyphs(toneT t) {
     toneGlyphT vToneChords;
     chordGlyphT vChordGlyph;
@@ -106,21 +106,22 @@ namespace tone_ {
     
     return vToneChords;
   }
-
+  
   auto chromatic = toneChords<intervalT,4,12>(scale_::chromatic);
-  auto major = toneChords<intervalT,4,7>(scale_::major);
-  auto minor = toneChords<intervalT,4,7>(scale_::minor);
-  auto harmonicminor = toneChords<intervalT,4,7>(scale_::harmonicminor);
-  auto whole = toneChords<intervalT,4,7>(scale_::whole);
+  auto major = toneChords(scale_::major);
+  auto minor = toneChords(scale_::minor);
+  auto harmonicminor = toneChords(scale_::harmonicminor);
+  auto whole = toneChords<intervalT,4,6>(scale_::whole);
   auto pentatonicmajor = toneChords<intervalT,4,5>(scale_::pentatonicmajor);
   auto pentatonicminor = toneChords<intervalT,4,5>(scale_::pentatonicminor);
   auto blues = toneChords<intervalT,4,6>(scale_::blues);
-
+  
+  // Major scale modes
   auto ionian = major;
-  auto dorian = toneChords<intervalT,4,7>(scale_::dorian);
-  auto phrygian = toneChords<intervalT,4,7>(scale_::phrygian);
-  auto lydian = toneChords<intervalT,4,7>(scale_::lydian);
-  auto mixolydian = toneChords<intervalT,4,7>(scale_::mixolydian);
+  auto dorian = toneChords(scale_::dorian);
+  auto phrygian = toneChords(scale_::phrygian);
+  auto lydian = toneChords(scale_::lydian);
+  auto mixolydian = toneChords(scale_::mixolydian);
   auto aeolian = minor;
-  auto locrian = toneChords<intervalT,4,7>(scale_::locrian);
+  auto locrian = toneChords(scale_::locrian);
 }

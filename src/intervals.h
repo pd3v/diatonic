@@ -27,11 +27,11 @@ using midiT = std::vector<intervalT>;
 const intervalT d5 = a4;
 const intervalT d12 = a11;
 
-const noteT db = cs;
-const noteT eb = ds;
-const noteT gb = fs;
-const noteT ab = gs;
-const noteT bb = as;
+const noteT df = cs;
+const noteT ef = ds;
+const noteT gf = fs;
+const noteT af = gs;
+const noteT bf = as;
 
 const std::map<std::string,uint16_t> noteIdx{{"c",0},{"cs",1},{"d",2},{"ds",3},{"e",4},{"f",5},{"fs",6},{"g",7},{"gs",8},{"a",9},{"as",10},{"b",11}};
 const std::vector<std::pair<uint16_t,std::string>> idxNote{{0,"c"},{1,"cs"},{2,"d"},{3,"ds"},{4,"e"},{5,"f"},{6,"fs"},{7,"g"},{8,"gs"},{9,"a"},{10,"as"},{11,"b"}};
