@@ -16,7 +16,7 @@
 extern const intervalT OCTAVE;
 
 using toneT = std::vector<chordT>;
-using chordGlyphT = scaleGlyphT;
+using chordGlyphT = std::vector<std::string>;
 using toneGlyphT = std::vector<chordGlyphT>;
 
 enum chordDegreeT {tonic = 0,supertonic,mediant,subdominant,dominant,submediant,subtonic};
