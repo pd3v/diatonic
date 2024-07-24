@@ -1,3 +1,11 @@
+//
+//  diatonic lib - music scales, chords and transforming functions
+//
+//  Created by @pd3v_
+//
+
+#pragma once
+
 #include "../src/intervals.h"
 #include "../src/constexprArray.hpp"
 #include "../src/chords.h"
