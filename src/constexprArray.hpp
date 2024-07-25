@@ -15,19 +15,15 @@ struct ConstexprArray {
   constexpr ConstexprArray() : data{} {}
   
   constexpr ConstexprArray(std::initializer_list<T> l) {
-    auto it = l.begin();
-    for (size_t i = 0; i< l.size(); ++i) {
-      data[i] = *it;
-      ++it;
-    }
+    auto i = 0;
+    for (auto it = l.cbegin(); it != l.cend(); ++it)
+      data[i++] = *it;
   }
   
   constexpr ConstexprArray(std::vector<T> v) {
-    auto it = v.begin();
-    for (size_t i = 0; i< v.size(); ++i) {
-      data[i] = *it;
-      ++it;
-    }
+    auto i = 0;
+    for (auto it = v.cbegin(); it != v.cend(); ++it)
+      data[i++] = *it;
   }
 
   constexpr T& operator[](size_t i) {return data[i];}
