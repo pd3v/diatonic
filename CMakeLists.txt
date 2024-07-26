@@ -3,12 +3,18 @@ cmake_minimum_required(VERSION 3.19.2)
 # Default as c++17 but also possible c++14
 set (CMAKE_CXX_STANDARD 17)
 
+option(BUILD_SHARED TRUE)
+set(B_SHARED SHARED)
+if(NOT BUILD_SHARED) 
+	set(B_SHARED STATIC)
+endif()
+
 project(diatonic)
 
 set(LIBRARY_OUTPUT_NAME ${PROJECT_NAME})
 
 add_library(
-	${LIBRARY_OUTPUT_NAME} SHARED
+	${LIBRARY_OUTPUT_NAME} ${B_SHARED}
   src/intervals.h
   src/intervals.cpp
   src/constexprArray.hpp
